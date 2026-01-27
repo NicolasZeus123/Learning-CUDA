@@ -407,7 +407,7 @@ void flashAttention(const std::vector<T>& h_q,
   cudaMemset(d_m, 0xFF, ml_size * sizeof(double));  // -inf in double (all bits set)
   cudaMemset(d_l, 0, ml_size * sizeof(double));
 
-  // 6. 启动配置（FlashAttention v2风格）
+  // 6. 启动配置
   const int Br = 32;  // Query分块大小（可调，通常16~32）
   const int Bc = 64;  // Key/Value分块大小（可调，通常32~128）
 
